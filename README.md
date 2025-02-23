@@ -116,5 +116,5 @@ Contributions are welcome! Feel free to open an **issue** or submit a **pull req
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
-**🔗 Connect with me:** [Your LinkedIn](https://www.linkedin.com/in/ishwar-ambad) | [GitHub](https://github.com/ish-war) 🚀
+**🔗 Connect with me:** [My LinkedIn](https://www.linkedin.com/in/ishwar-ambad) | [GitHub](https://github.com/ish-war) 🚀
 
