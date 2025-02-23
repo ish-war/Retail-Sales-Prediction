@@ -2,7 +2,7 @@
 
 ## Web Interface
 ![Screenshot 2025-02-23 162505](https://github.com/user-attachments/assets/db84174c-3b56-424d-aa3e-60bc952367bf)
-![Screenshot 2025-02-23 162552](https://github.com/user-attachments/assets/dcc875e1-7d00-4447-915e-561798e86618)
+![Screenshot 2025-02-23 162552](https://github.com/user-attachments/assets/95206b78-962a-4709-8c79-17d9c933f3d8)
 
 ## 📝 Overview
 The **Retail Sales Prediction** project aims to develop a **machine learning model** that forecasts sales across retail stores using the **Rossmann dataset**. This project explores sales patterns, identifies key influencing factors, and provides actionable insights to optimize store performance. The complete workflow integrates **data preprocessing, feature engineering, model selection, and deployment** using **Docker and Minikube**.
