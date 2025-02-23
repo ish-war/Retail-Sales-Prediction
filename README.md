@@ -1,64 +1,120 @@
-# Retail-Sales-Prediction
+# 📊 Retail Sales Prediction
 
-Objective
+## Web Interface
+![Screenshot 2025-02-23 162505](https://github.com/user-attachments/assets/db84174c-3b56-424d-aa3e-60bc952367bf)
+![Screenshot 2025-02-23 162552](https://github.com/user-attachments/assets/dcc875e1-7d00-4447-915e-561798e86618)
 
-The primary objective of the Retail Sales Prediction Project was to develop a machine learning model for forecasting sales across a set of retail stores using the Rossman dataset. This project aimed to uncover patterns, identify influential factors, and provide actionable insights for optimizing store performance. The dataset included information about stores, competition, and sales-related features.
+## 📝 Overview
+The **Retail Sales Prediction** project aims to develop a **machine learning model** that forecasts sales across retail stores using the **Rossmann dataset**. This project explores sales patterns, identifies key influencing factors, and provides actionable insights to optimize store performance. The complete workflow integrates **data preprocessing, feature engineering, model selection, and deployment** using **Docker and Minikube**.
 
-Approach
+## 🚀 Technologies Used
+- **Python** (Data Processing & Machine Learning)
+- **Pandas, NumPy, Matplotlib, Seaborn** (Data Cleaning & Visualization)
+- **Scikit-Learn** (Model Training)
+- **Streamlit** (Web Application)
+- **Docker** (Containerization)
+- **Kubernetes (Minikube)** (Deployment & Scaling)
+- **Git & GitHub** (Version Control)
 
-1. Data Loading and Cleaning
-   
-Imported necessary libraries and loaded two datasets: 'store.csv' and 'Rossmann Stores Data.csv.'
-Cleaned the data by addressing NaN and missing values, removing duplicates, and combining both datasets for further analysis.
+## 🔍 Approach
+### 1️⃣ Data Collection & Preprocessing
+- Loaded the datasets.
+- Handled **missing values** and removed duplicates.
+- Combined datasets for comprehensive analysis.
+- Extracted **year, month, and day** from the `Date` variable.
 
-3. Data Wrangling
-   
-Removed outliers from the data.
-Extracted day, time, and year from the 'Date' variable.
+### 2️⃣ Exploratory Data Analysis (EDA)
+- Used multiple **visualizations** to explore relationships between variables.
+- Identified **patterns** and formulated hypotheses.
+- Analyzed key factors affecting sales such as **promotions, store types, and competition distance**.
 
-5. Data Visualization and Hypothesis Formulation
-   
-Explored data using nine different types of charts to understand relationships between variables.
-Formulated hypotheses based on observed patterns and trends.
+### 3️⃣ Feature Engineering & Transformation
+- Applied **one-hot encoding** on categorical variables.
+- Removed **redundant** or highly correlated features.
+- Scaled numerical features using **StandardScaler**.
 
-7. Data Pre-processing
+### 4️⃣ Model Training & Evaluation
+- Experimented with multiple models:
+  - **Linear Regression**
+  - **Decision Tree**
+  - **RandomForest Regressor** ✅ (Best Performing Model)
+- Evaluated models using:
+  - **Root Mean Squared Error (RMSE)**
+  - **R² Score**
+- RandomForest Regressor showed the best balance between accuracy and overfitting.
 
-Applied one-hot encoding on selected categorical variables.
-Removed unnecessary features and transformed the 'Sales' feature.
-Removed the 'Customers' feature due to high correlation with sales and its uncontrollable nature by stores.
-Scaled the data using standard scaler.
+### 5️⃣ Deployment & Containerization
+- **Built a Streamlit app** to provide an interactive sales prediction tool.
+- **Dockerized the application** for easy deployment.
+- Used **Minikube & Kubernetes** for container orchestration.
 
-9. ML Model Implementation
-    
-Split the dataset into training and test subsets.
-Experimented with three ML models: Linear Regression, Decision Tree, and RandomForest Regressor.
-RandomForest Regressor was chosen for its sophistication and robustness to overfitting.
+## 📊 Key Insights & Findings
+- **Promotions significantly boost sales**.
+- **Store type 'B' has the highest average sales**, despite fewer stores.
+- **School holidays show a slight increase in sales**.
+- **Competition distance strongly influences sales trends**.
 
-11. Key Findings
-    
-Promotions have a positive impact on sales.
-Assortment type 'b' (Extra) has higher demand.
-Store type 'B,' despite being fewer in number, had the highest sales average.
-Slightly higher sales were observed on school holidays.
-Competition distance strongly affects sales.
-RandomForest Regressor outperformed other models in terms of RMSE and R-squared values.
+## ⚠️ Challenges & Limitations
+- **Data Quality Issues**: Missing values and inconsistencies required careful handling.
+- **External Factors**: Economic conditions, seasonal effects, and competitor strategies were not accounted for.
+- **Generalization**: The model provides an overall forecast but may not be highly accurate for individual stores.
 
-13. Challenges and Limitations
+## 🔮 Future Enhancements
+- **Incorporate external economic indicators** (inflation, GDP, etc.) to improve predictions.
+- **Deploy a real-time model monitoring system**.
+- **Experiment with deep learning models** (e.g., LSTMs for time-series forecasting).
 
-Data Quality: Addressed challenges related to data quality through careful preprocessing.
+## 🛠️ Project Setup & Execution
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/ish-war/retail-sales-prediction.git
+cd retail-sales-prediction
+```
 
-External Factors: Recognized limitations in capturing the full impact of external factors, such as economic conditions.
+### 2️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-Individual Store Performance: The model is generalized for the entire Rossman store chain and may not be highly accurate for individual stores.
+### 3️⃣ Run the Streamlit App
+```bash
+streamlit run app.py
+```
 
-Future Work
+### 4️⃣ Build & Run with Docker
+```bash
+docker build -t retail-sales-prediction .
+docker run -p 8501:8501 retail-sales-prediction
+```
 
-While the project lays a solid foundation for retail sales prediction, opportunities for further enhancement include:
+### 5️⃣ Deploy with Minikube
+```bash
+minikube start
+minikube image load retail-sales-prediction
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+minikube service sales-app-service --url
+```
 
-Integration of external data sources to capture broader economic trends.
-Continuous model refinement and iteration based on ongoing data collection.
-Deployment and monitoring strategies for real-world application.
+## 📌 Folder Structure
+```
+📂 retail-sales-prediction
+│── 📜 app.py                 # Streamlit application
+│── 📜 model_building.ipynb    # Jupyter Notebook for model training
+│── 📜 requirements.txt        # Dependencies
+│── 📜 Dockerfile              # Docker configuration
+│── 📜 deployment.yaml         # Kubernetes Deployment
+│── 📜 service.yaml            # Kubernetes Service
+│── 📜 .gitignore              # Files to ignore in GitHub
+└── 📂 data                    # Raw dataset files
+```
 
-Conclusion
+## 🤝 Contributing
+Contributions are welcome! Feel free to open an **issue** or submit a **pull request**.
 
-In conclusion, the Retail Sales Prediction Project provides actionable insights for retail store management to optimize performance. Despite challenges, the models demonstrate robust predictive capabilities, paving the way for future advancements in the field. The key findings offer valuable guidance for decision-making and strategic planning in the retail industry.
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+**🔗 Connect with me:** [Your LinkedIn](https://www.linkedin.com/in/ishwar-ambad) | [GitHub](https://github.com/ish-war) 🚀
+
